@@ -150,8 +150,8 @@ public class JavaScriptChannel {
 
   @SuppressWarnings("unused")
   @JavascriptInterface
-  public void apiAddFavorite(final String message) {
-    sendToFlutter("apiAddFavorite@" + message);
+  public void addFavorite(final String message) {
+    sendToFlutter("addFavorite@" + message);
   }
 
   @SuppressWarnings("unused")
