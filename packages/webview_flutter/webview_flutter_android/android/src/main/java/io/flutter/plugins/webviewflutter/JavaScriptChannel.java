@@ -41,7 +41,7 @@ public class JavaScriptChannel {
   // Suppressing unused warning as this is invoked from JavaScript.
   @SuppressWarnings("unused")
   @JavascriptInterface
-  // これはつかわない
+  // これはつかえない（JavaScript側のpostMessageメソッドになるので）
   public void postMessage(final String message) {
     final Runnable postMessageRunnable =
         () -> {
@@ -58,79 +58,157 @@ public class JavaScriptChannel {
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void init(final String message) {
-    finalMessage("init@" + message);
+    sendToFlutter("init@" + message);
   }
 
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void getValue(final String message) {
-    finalMessage("getValue@" + message);
+    sendToFlutter("getValue@" + message);
   }
 
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void setValue(final String message) {
-    finalMessage("setValue@" + message);
+    sendToFlutter("setValue@" + message);
   }
 
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void deleteValue(final String message) {
-    finalMessage("deleteValue@" + message);
+    sendToFlutter("deleteValue@" + message);
   }
 
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void insertArchive(final String message) {
-    finalMessage("insertArchive@" + message);
+    sendToFlutter("insertArchive@" + message);
   }
 
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void getArchiveCount(final String message) {
+    sendToFlutter("getArchiveCount@" + message);
+  }
 
-  /*
-   *   static const apiGetArchiveCount = 'getArchiveCount';
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void selectProfile(final String message) {
+    sendToFlutter("selectProfile@" + message);
+  }
 
-  static const apiSelectProfile = 'selectProfile';
-  static const apiOpenArchive = 'openArchive';
-  static const apiGetArchive = 'getArchive';
-  // TODO: 今まで使ったことがないので不要になります
-  static const apiOpenNotify = 'openNotify';
-  static const apiOpenTextField = 'openTextField';
-  static const apiOpenDatePicker = 'openDatePicker';
-  // TODO: 今まで使ったことがないので不要になります
-  static const apiOpenTimePicker = 'openTimePicker';
-  // TODO: 今まで使ったことがないので不要になります
-  static const apiOpenSelectPicker = 'openSelectPicker';
-  // TODO: 今まで使ったことがないので不要になります
-  static const apiUpdateProfile = 'updateProfile';
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openArchive(final String message) {
+    sendToFlutter("openArchive@" + message);
+  }
 
-   */
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void getArchive(final String message) {
+    sendToFlutter("getArchive@" + message);
+  }
+
+  // TODO: 今まで使ったことがないので不要になります
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openNotify(final String message) {
+    sendToFlutter("openNotify@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openTextField(final String message) {
+    sendToFlutter("openTextField@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openDatePicker(final String message) {
+    sendToFlutter("openDatePicker@" + message);
+  }
+
+  // TODO: 今まで使ったことがないので不要になります
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openTimePicker(final String message) {
+    sendToFlutter("openTimePicker@" + message);
+  }
+  // TODO: 今まで使ったことがないので不要になります
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openSelectPicker(final String message) {
+    sendToFlutter("openSelectPicker@" + message);
+  }
+
+  // TODO: 今まで使ったことがないので不要になります
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void updateProfile(final String message) {
+    sendToFlutter("updateProfile@" + message);
+  }
 
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void apiAddFavorite(final String message) {
-    finalMessage("apiAddFavorite@" + message);
+    sendToFlutter("apiAddFavorite@" + message);
   }
 
-  /*
-   *   static const apiPay = 'pay';
-  static const apiOpenUrl = 'openUrl';
-  static const apiCheckNetwork = 'checkNetwork';
-  */
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void pay(final String message) {
+    sendToFlutter("pay@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openUrl(final String message) {
+    sendToFlutter("openUrl@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void checkNetwork(final String message) {
+    sendToFlutter("checkNetwork@" + message);
+  }
+
   @SuppressWarnings("unused")
   @JavascriptInterface
   public void showToast(final String message) {
-    finalMessage("showToast@" + message);
+    sendToFlutter("showToast@" + message);
   }
 
-  /*
-  static const apiDownloadImage = 'downloadImage';
-  static const apiOpenChildApp = 'openChildApp';
-  static const apiOpenNativeApp = 'openNativeApp';
-  static const apiOpenSearch = 'openSearch';
-  static const apiExitChildApp = 'exitChildApp';
-   */
-  
-  private void finalMessage(final String message) {
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void downloadImage(final String message) {
+    sendToFlutter("downloadImage@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openChildApp(final String message) {
+    sendToFlutter("openChildApp@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openNativeApp(final String message) {
+    sendToFlutter("openNativeApp@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void openSearch(final String message) {
+    sendToFlutter("openSearch@" + message);
+  }
+
+  @SuppressWarnings("unused")
+  @JavascriptInterface
+  public void exitChildApp(final String message) {
+    sendToFlutter("exitChildApp@" + message);
+  }
+
+  private void sendToFlutter(final String message) {
     final Runnable postMessageRunnable =
             () -> {
               flutterApi.postMessage(JavaScriptChannel.this, message, reply -> {});
